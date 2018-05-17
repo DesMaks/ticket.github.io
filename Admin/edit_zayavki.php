@@ -16,12 +16,12 @@ if(!$_GET['id'])
 <?php foreach($zayavki as $row): ?>
 
 <?php endforeach;?>
-
-
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Изменение существующей заявки</title>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
     <link href="styles.css" type="text/css" rel="stylesheet">

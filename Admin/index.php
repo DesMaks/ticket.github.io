@@ -2,8 +2,12 @@
 if (!empty ($_SESSION['admin'])){
     if ($_SESSION['admin']){
         ?>
-        <html>
+        <!DOCTYPE html>
+        <html lang="ru">
         <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
             <title>Вход в административную панель</title>
             <link href="styles.css" type="text/css" rel="stylesheet">
             <style type= text/css>
@@ -120,8 +124,12 @@ if ($_POST['login']!= $adminlogin) not_logged_in ();
 if ($_POST['password']!= $adminpassw) not_logged_in ();
 $_SESSION['admin'] = true;
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Административная панель</title>
     <link href="styles.css" type="text/css" rel="stylesheet">
     <style type=text/css>
