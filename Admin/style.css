@@ -1,0 +1,332 @@
+body
+{
+    margin:0px;
+    font-family:Verdana;
+    font-weight:100;
+    font-size:15px;
+}
+.title{font-weight:bold;font-size:13px;}
+p{margin:2px;}
+a.menu_link{font-weight:100;margin-left:15px;}
+a{font-weight:bold;}
+a:link {color: #86b7ff; text-decoration:none;}
+a:visited {color: #86b7ff; text-decoration:none;}
+a:hover {color: #86b7ff; text-decoration:none;}
+a:active {color: #86b7ff; text-decoration:none;}
+
+.div_footer
+{
+    border:1px solid #dcdcdc;
+    width:550px;
+    vertical-align:top;
+    text-align:justify;
+    padding:2px;
+    margin-top:5px;
+    margin-bottom:10px;
+    font-weight:bold !important;
+    font-size:9px !important;
+}
+
+
+.header
+{
+    margin:0px;
+    font-family:Verdana;
+    font-weight:100;
+    font-size:16px;
+    text-align: center;
+    text-shadow: 3px 3px 8px rgba(93, 195, 255, 0.9);
+    font-size:16px;
+    width:100%;
+    border:2px solid #c0ecff;
+    height:25%px;
+    margin:15px;
+    margin-top:0px;
+}
+
+
+.koncerts
+{
+    margin:0px;
+    font-family:Verdana;
+    font-weight:100;
+    font-size:16px;
+    text-align: center;
+    text-shadow: 3px 3px 8px rgba(93, 195, 255, 0.9);
+    font-size:16px;
+    width:100%;
+    border:2px solid #c0ecff;
+    height:25%px;
+    margin:15px;
+    margin-top:0px;
+}
+.button1{
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 180px;
+    height: 68px;
+    cursor: pointer;
+    position: relative;
+    left: 68%;
+    bottom:100px;
+    border: 1.5px solid rgb(30,205,151);
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    font: normal 20px/60px "Advent Pro", Helvetica, sans-serif;
+    color: rgb(30, 205, 151);
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    letter-spacing: 1px;
+    background: rgba(0, 0, 0,0.1);
+    text-decoration: none;
+
+}
+
+
+
+
+
+.txt {
+    margin:0px;
+    font-family:Verdana;
+    font-weight:100;
+    font-size:16px;
+    text-align: center;
+    text-shadow: 3px 3px 8px rgba(93, 195, 255, 0.9);
+    font-size:16px;
+    width:100%;
+
+    height:25%px;
+    margin:15px;
+    margin-top:0px;
+}
+
+
+.box {
+
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 160px;
+    height: auto;
+    padding: 80px 20% 80px 50%;
+    margin: 0;
+    overflow: hidden;
+    display: block;
+    float: none;
+    z-index: auto;
+    -webkit-box-sizing: content-box;
+
+    position: static;
+    opacity: 1;
+    cursor: default;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    font: normal 20px/1 "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: rgba(42,186,183,1);
+    text-align: center;
+    text-indent: -20%;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    background: url("image/3_3.png"), #838481;
+    background-position: 50% 50%;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: auto auto;
+    background-size: auto auto;
+    -webkit-box-shadow: 5px 6px 1px 1px rgba(28,44,165,0.3) ;
+    box-shadow: 5px 6px 1px 1px rgba(28,44,165,0.3) ;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2) ;
+}
+.button1{
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 180px;
+    height: 68px;
+    cursor: pointer;
+    position: relative;
+    left: 68%;
+    bottom:100px;
+    border: 1.5px solid rgb(30,205,151);
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    font: normal 20px/60px "Advent Pro", Helvetica, sans-serif;
+    color: rgb(30, 205, 151);
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    letter-spacing: 1px;
+    background: rgba(0, 0, 0,0.1);
+    text-decoration: none;
+
+}
+
+.button:hover {
+    color: rgb(255, 255, 255);
+    background: rgb(168, 185, 237);
+}
+
+.button:active {
+    border: 2px solid rgba(33,224,163,1);
+    background: rgba(33,224,163,1);
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+A {
+    text-decoration: none;
+    color: rgb(168, 185, 237);
+}
+A:visited {
+    text-decoration: none;
+    color: rgb(168, 185, 237);
+}
+A:active {
+    text-decoration: none;
+    color: rgb(168, 185, 237);
+}
+.hall {
+    display: flex;
+    flex-direction: column;
+    margin:2px auto 2px;
+
+
+}
+
+.hall-row_red {
+    display: flex;
+    flex-direction: row;
+    margin:2px auto 2px;
+    border: 2px solid #d43d33;
+
+}
+.hall-row_yel {
+    display: flex;
+    flex-direction: row;
+    margin:2px auto 2px;
+    border: 2px solid #d4d404;
+
+}
+.hall-row_gr {
+    display: flex;
+    flex-direction: row;
+    margin:2px auto 2px;
+    border: 2px solid #219b17;
+
+}
+.hall-place {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+
+    width: 50px;
+    height: 50px;
+
+
+    font-weight: bold;
+
+    background-color: #fff;
+    border: 1px solid #999;
+    cursor: pointer;
+}
+
+
+.hall-place_fqred {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+
+    width: 50px;
+    height: 50px;
+
+    font-weight: bold;
+
+    background-color: #fff;
+    border: 2px solid #d40307;
+}
+.hall-place_fqyel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+
+    width: 50px;
+    height: 50px;
+
+    font-weight: bold;
+
+    background-color: #fff;
+    border: 2px solid #d4d404;
+}
+.hall-place_fqgr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+
+    width: 50px;
+    height: 50px;
+
+
+    font-weight: bold;
+
+    background-color: #fff;
+    border: 2px solid #219b17;
+
+
+}
+
+.hall-place.selected {
+    cursor: pointer;
+
+    background-color: rgb(109, 207, 109);
+}
+
+.hall-place.selected:hover {
+    background-color: rgb(74, 221, 87);
+}
+
+.hall-place.bought {
+    cursor: auto;
+    background-color: rgb(184, 36, 36);
+    color: #fff;
+}
+
+
+.button {
+    width: 100px;
+    height: 35px;
+    color: rgb(30, 205, 151);
+
+    margin: 0 auto;
+
+}
+.scene{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1000px;
+    height: 150px;
+    font-weight: bold;
+    background-color: #d0ffc4;
+    border: 1px solid #999;
+    margin:10px auto;
+}
+.span{
+    color: rgba(0, 0, 0, 0.7);
+
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    letter-spacing: -1px;
+    word-spacing: 5px;
+    text-shadow: 5px 5px 12px rgba(93, 195, 255, 0.9);
+    position:relative;
+
+}
