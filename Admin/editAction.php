@@ -84,7 +84,7 @@ if(($_FILES['userfile']['type'] == 'image/gif' || $_FILES['userfile']['type'] ==
 if(!empty($title) && !empty($text)&& !empty($price1)&& !empty($price2)&& !empty($price3)) {
 
 
-    if(check_length($title, 2, 25) && check_length($text, 2, 1000)) {
+    if(check_length($title, 2, 25) && check_length($text, 2, 3000)) {
         try
         {
             $user = "root";

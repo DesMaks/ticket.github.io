@@ -47,17 +47,17 @@ if(!$_GET['id'])
 
                 <p>
                     <label>Ввеcти цену зоны 1* <br>
-                        <input type="text" name='price1' cols="100" rows="20" value="<?=$row['price_zone1']?> ₽">
+                        <input type="text" name='price1' cols="100" rows="20" value="<?=$row['price_zone1']?>">
                     </label>
                 </p>
                 <p>
                     <label>Ввеcти цену зоны 2* <br>
-                        <input type="text" name='price2' cols="100" rows="20" value="<?=$row['price_zone2']?> ₽">
+                        <input type="text" name='price2' cols="100" rows="20" value="<?=$row['price_zone2']?> ">
                     </label>
                 </p>
                 <p>
                     <label>Ввеcти цену зоны 3* <br>
-                        <input type="text" name='price3' cols="100" rows="20" value="<?=$row['price_zone3']?> ₽">
+                        <input type="text" name='price3' cols="100" rows="20" value="<?=$row['price_zone3']?>">
                     </label>
                 </p>
 
@@ -67,8 +67,7 @@ if(!$_GET['id'])
                 <p>Выберите дату и время*:<input type="datetime-local" name="calendar" ></p>
                 <p><label>Ввеcти полное описание концерта*  (не менее 2 символов)<br>
 
-                        
-                        <input type="text" name='text' cols="100" rows="20" value="<?=$row['text']?>">
+<textarea name="text" value="<?=$row['text']?>"></textarea>
                     </label></p>
                 <p> <label>
                         <input type="submit" name="submit" id="submit" value="Редактировать">

@@ -15,7 +15,7 @@
         <td colspan="2" height="50px" valign="top">
             <!--ЛОГО-->
             <div class="header">
-                <div class="text" style="padding:3px;">Все концерты.
+                <div class="text1" style="padding:3px;">Все концерты
                    
             </div>
         </td>
@@ -34,8 +34,9 @@
                 <div class="koncerts">
 
                     <img src='http://<?= $rows['photo'] ?>' heigth=500 width=500>
-                    <div class="text"> Дата проведения концерта: <?= $rows['date_concert'] ?> </div>
-                    <div class="text"> Название концерта: <?= $rows['title'] ?> </div>
+
+                    <div class="text1"> Название концерта: "<?= $rows['title'] ?>"</div>
+                 <div class="text1"> Дата проведения концерта: <?= $rows['date_concert'] ?> </div><br>
                     <div class="text">Описание концерта: <?= $rows['text'] ?> </div>
 
                     <?php
@@ -91,7 +92,7 @@
                             $priceTo = $rows['price_zone1'];
                         }
 
-                        echo "Цены билетов:<br> от " . $priceTo. 'до'.$priceFrom?><form action="pay.php" method="get">
+                        echo "<div class='text1'> Цены билетов:<br> <br>от " . $priceTo.'₽ '. 'до '.$priceFrom.'₽ '?><br></div><form action="pay.php" method="get">
                     <input type="hidden" name="kid" value="<?= $rows['id'] ?>">
 
                     <input type="submit" value="Купить"/>

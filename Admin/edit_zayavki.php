@@ -40,14 +40,16 @@ if(!$_GET['id'])
                 <input type="hidden" name="ID" value="<?=$_GET['id']?>">
                 <p>
                     <label>Изменить статус активности заявки*<br>
+                        <div class="">Активен: <? echo ($oplt <= 0 ? 'Нет' : 'Да');?> </div>
                         <? echo ($oplt <= 0 ? '<input type="radio" name="payed" value="1">Активен<br>' : '<input type="radio" name="payed" value="0">Не активен<br>');?> </div>
                     </label>
                 </p>
 
                 <p>
                     <label>Изменить статус оплаты заявки* <br>
-                        <div class="">Активен: <? echo ($active <= 0 ? 'Нет' : 'Да');?> </div>
-                         <? echo ($active <= 0 ? '<input type="radio" name="active" value="1">Оплачено<br>' : '<input type="radio" name="active" value="0">Не оплачено<br>');?> </div>
+                        <div class="">Оплачен: <? echo ($active <= 0 ? 'Нет' : 'Да');?> </div>
+                         <input type="radio" name="active" value="1">Оплачено<br>
+                        <input type="radio" name="active" value="0">Не оплачено<br></div>
 
 
                     </label>
