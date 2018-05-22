@@ -1,38 +1,25 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Главная</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+<?include ('header.php');
+include('bdConection.php');?>
+<title>Главная</title>
 <body>
 <table align="center">
     <tr>
         <td colspan="2" height="50px" valign="top">
             <!--ЛОГО-->
-            <div class="header">
-                <div class="text1" style="padding:3px;">Все концерты
-                   
-            </div>
+            <div class = "header">
+                <div class = "text1" style="padding:3px;">Все концерты </div>
+           
         </td>
     </tr>
     <tr>
         <td valign="top" align="center"><br>
+
             <?php
-            include('bdConection.php');
-
-            $zapis = $dbh->query('SELECT * from zap ORDER BY date_concert');
-
-
+            $zapis = $dbh->query("SELECT * from zap ORDER BY date_concert");
 
              foreach ($zapis as $rows): ?>
 
                 <div class="koncerts">
-
                     <img src='http://<?= $rows['photo'] ?>' heigth=500 width=500>
 
                     <div class="text1"> Название концерта: "<?= $rows['title'] ?>"</div>
@@ -66,8 +53,6 @@
                         }
                     }
 
-
-
                     $z1_Occup = ($zone1_occupied_places == 5*15);
                     $z2_Occup = ($zone2_occupied_places == 5*15);
                     $z3_Occup = ($zone3_occupied_places == 5*15);
@@ -100,24 +85,11 @@
                     } else {
                         echo "Мест нет, попробуйте зайти позже или обновите страницу.";
                     }
-
-                                      ?>
-
-
-
-
+                    ?>
                 </div>
 
-
-
-
             <?php endforeach; ?>
-
-
-
-
-
+        </td>
     </tr>
 </table>
-</body>
-</html>
+<?include ('footer.php')?>

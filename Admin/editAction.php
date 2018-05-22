@@ -1,12 +1,14 @@
 <?php
+include ('adm.php');
 include ('bdConection.php');
-$title =$_POST['title'];
-$text=$_POST['text'];
-$Cid=$_POST['ID'];
-$price1=$_POST['price1'];
-$price2=$_POST['price2'];
-$price3=$_POST['price3'];
-$date_concert=$_POST['calendar'];
+include ('header.php');
+$title = $_POST['title'];
+$text = $_POST['text'];
+$Cid = $_POST['ID'];
+$price1 = $_POST['price1'];
+$price2 = $_POST['price2'];
+$price3 = $_POST['price3'];
+$date_concert = $_POST['calendar'];
 
 function clean($value = "") {
     $value = trim($value);
@@ -33,11 +35,11 @@ $price3 = clean($price3);
 
 $uploaddir = 'photo/';
 
-$apend=date('YmdHis').'.jpg';
+$apend = date('YmdHis').'.jpg';
 
-$uploadfile = "$uploaddir$apend";
+$uploadfile = "$uploaddir.$apend";
 
-$urlimages= "ticket.site/Admin/".$uploadfile."";
+$urlimages = $_SERVER['SERVER_NAME']."/Admin/".$uploadfile."";
 if(($_FILES['userfile']['type'] == 'image/gif' || $_FILES['userfile']['type'] == 'image/jpeg' || $_FILES['userfile']['type'] == 'image/png'))
 {
 
@@ -60,17 +62,9 @@ if(($_FILES['userfile']['type'] == 'image/gif' || $_FILES['userfile']['type'] ==
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Редактирование концерта</title>
 
-    <meta charset="UTF-8">
-    <title>Редактирование концерта</title>
-    <link rel="stylesheet" href="styles.css" type="text/css"/></head>
 <body >
-
 <div class="text">Изменение существующего концерта</div>
 
 <table border="1" bordercolor="#000000" width="910" align="center" bgcolor="#a8b9ed" cellspacing="0" cellpadding="10">
@@ -79,7 +73,6 @@ if(($_FILES['userfile']['type'] == 'image/gif' || $_FILES['userfile']['type'] ==
         <?php include "left.php";?>
         <td>
 
-
 <?php
 if(!empty($title) && !empty($text)&& !empty($price1)&& !empty($price2)&& !empty($price3)) {
 
@@ -87,8 +80,7 @@ if(!empty($title) && !empty($text)&& !empty($price1)&& !empty($price2)&& !empty(
     if(check_length($title, 2, 25) && check_length($text, 2, 3000)) {
         try
         {
-            $user = "root";
-            $pass = "UdV91SUF";
+
 
             $dbh = new PDO('mysql:host=localhost;dbname=koncerti-db', $user, $pass);
             $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -125,8 +117,7 @@ price_zone2 = :price_zone2,price_zone3 = :price_zone3,date_concert =:date_concer
 ?>
 
         </td>
-
+</tr>
 </table>
-</body>
-</html>
+<?include ('footer.php');?>
 

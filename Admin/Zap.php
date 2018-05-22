@@ -1,21 +1,9 @@
-
 <?php
-
-session_start ();
-
-if (!$_SESSION['admin']) die ( Запрещено );
-
+include ('adm.php');
+include ('header.php');
 ?>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Добавление нового концерта</title>
+<title>Добавление нового концерта</title>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-    <link href="styles.css" type="text/css" rel="stylesheet">
-</head>
 <body>
 <a href=admin_logout.php>Выйти из административной панели</a>
 
@@ -69,6 +57,5 @@ if (!$_SESSION['admin']) die ( Запрещено );
     </tr>
 
 </table>
-</font>
-</body>
-<html>
+<?php
+include ('header.php');?>

@@ -1,34 +1,21 @@
 
 <?php
-session_start ();
+include ('adm.php');
 include ('bdConection.php');
-if (!$_SESSION['admin']) die ( Запрещено );
-
-
+include ('header.php');
 
 $zapis = $dbh->query('SELECT * from zap WHERE id = ' . $_GET["id"]);
 
 if(!$_GET['id'])
     header('Location: /');
 
+foreach($zapis as $row):
+
+endforeach;?>
 
 
-?>
-<?php foreach($zapis as $row): ?>
+<title>Изменение существующего концерта</title>
 
-<?php endforeach;?>
-
-
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Изменение существующего концерта</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-    <link href="styles.css" type="text/css" rel="stylesheet">
-</head>
 <body>
 <a href=admin_logout.php>Выйти из административной панели</a>
 <table border="1" bordercolor="#000000" width="910" align="center" bgcolor="#a8b9ed" cellspacing="0" cellpadding="10">
@@ -64,10 +51,10 @@ if(!$_GET['id'])
                 <p><label>Загрузить изображение <br>
                         <input type="file" name="userfile"">
                 </p>
-                <p>Выберите дату и время*:<input type="datetime-local" name="calendar" ></p>
+                <p>Выберите дату и время*:<input type="datetime-local" name="calendar"  value="<?=$row['date_concert']?>"></p>
                 <p><label>Ввеcти полное описание концерта*  (не менее 2 символов)<br>
 
-<textarea name="text" value="<?=$row['text']?>"></textarea>
+<textarea name="text" ><?=$row['text']?></textarea>
                     </label></p>
                 <p> <label>
                         <input type="submit" name="submit" id="submit" value="Редактировать">
@@ -84,9 +71,7 @@ if(!$_GET['id'])
     </tr>
 
 </table>
-</font>
-</body>
-<html>
+<?include ('footer.php');?>
 
 
 

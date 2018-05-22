@@ -1,39 +1,19 @@
 
 <?php
-
+include ('adm.php');
 include ('bdConection.php');
-session_start ();
-
-if (!$_SESSION['admin']) die ( Запрещено );
-
-
+include ('header.php');
 $zapis = $dbh->query('SELECT * from zap ');
 if(!$_GET['id'])
     header('Location: /');
-?>
-<?php foreach($zapis as $row): ?>
+foreach($zapis as $row):
 
-<?php endforeach;?>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ endforeach;?>
+<title>Удаление существующего концерта</title>
 
-    <title>Удаление существующего концерта</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-    <link href="styles.css" type="text/css" rel="stylesheet">
-</head>
 <body>
 
 <a href=admin_logout.php>Выйти из административной панели</a>
-
-
-
-
-
-
-
 
 <table border="1" bordercolor="#000000" width="910" align="center" bgcolor="#a8b9ed" cellspacing="0" cellpadding="10">
 
@@ -49,14 +29,10 @@ if(!$_GET['id'])
                     <form method="get" action="admin_main.php">
                         <button type="submit">Нет</button>
                     </form>
-
         </td>
     </tr>
-
 </table>
-</font>
-</body>
-<html>
+<?include ('footer.php');?>
 
 
 

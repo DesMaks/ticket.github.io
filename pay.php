@@ -1,26 +1,15 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Концертный зал</title>
-    <link rel="stylesheet" href="style.css">
+<?include ('header.php');
+include('bdConection.php');?>
+<title>Концертный зал</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="scripts.js"></script>
-
-</head>
 <?php
-include('bdConection.php');
 
 
-$zapisi = $dbh->query('SELECT * from zap WHERE id=' . $_GET['kid']);
+if(!$_GET['kid'])
+    header('Location: /');
+$zapisi = $dbh->query('SELECT * FROM `zap`');
 
-
-$all= $zapisi->fetch();
-
-
+$all=$zapisi->fetch();
 
 $zayavki = $dbh->query('SELECT * FROM `zayavk` WHERE `koncert_id`=' . $_GET['kid']);
 
@@ -36,13 +25,13 @@ while ($zayavka = $zayavki->fetch()) {
 }
 
 ?>
-<body>
+
 <table align="center">
     <tr>
         <td colspan="2" height="50px" valign="top">
             <!--ЛОГО-->
             <div class="header">
-                <div class="text" style="padding:3px;">Выбор места на концерт "<?= $all['title'] ?>".
+                <div class="text" style="padding:3px;">Выбор места на концерт.
 
                 </div>
         </td>
@@ -114,11 +103,14 @@ while ($zayavka = $zayavki->fetch()) {
 
                         <td> <span  class="span" >Сумма:  </span>  <span id="full-price" class="span"> 0 ₽</span></td>
                     </tr>
+                    <tr>
+
+                        <td> <a href="index.php">Назад</a></td>
+                    </tr>
 
                 </table>
             </div>
         </td>
     </tr>
 </table>
-</body>
-</html>
+<?include ('footer.php');?>

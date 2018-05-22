@@ -1,20 +1,12 @@
 <?php
+include ('adm.php');
 include ('bdConection.php');
-session_start ();
-
-if (!$_SESSION['admin']) die ( Запрещено );
+include ('header.php');
 
 ?>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Текущие концерты</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-    <link href="styles.css" type="text/css" rel="stylesheet">
-</head>
+
 <body>
 
 
@@ -36,7 +28,7 @@ if (!$_SESSION['admin']) die ( Запрещено );
 
 
                 <div class="users" style="border: 1px solid #ffde71">
-
+                   
                     <img src='http://<?=$row['photo']?>' heigth=500 width=500 >
                     <div class="text"> Дата проведения концерта: <?= $row['date_concert']?> </div>
                     <div class="text"> Название концерта: <?= $row['title']?> </div>
@@ -53,6 +45,5 @@ if (!$_SESSION['admin']) die ( Запрещено );
     </tr>
 
 </table>
-</font>
-</body>
-<html>
+
+<?include ('footer.php');?>

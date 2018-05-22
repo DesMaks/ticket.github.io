@@ -1,7 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: maksim
- * Date: 22.05.18
- * Time: 9:42
- */
+session_start ();
+
+if (!$_SESSION['admin']) die ( "Вход запрещен, необходима авторизация администратора.");
+?>

@@ -1,20 +1,14 @@
 <?php
-include ('bdConection.php');
+include ('adm.php');
+include "bdConection.php";
+include "header.php";
 $oplata = $_POST['payed'];
-$active=$_POST['active'];
-$Cid=$_POST['ID'];
-
-
+$active = $_POST['active'];
+$Cid = $_POST['ID'];
 ?>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
     <title>Редактирование заявок</title>
-    <link rel="stylesheet" href="styles.css" type="text/css"/></head>
+    
 <body >
 
 <div class="text">Изменение существующей записи</div>
@@ -27,12 +21,10 @@ $Cid=$_POST['ID'];
 
 
             <?php
-          
+           
                     try
                     {
 
-                        $user = "root";
-                        $pass = "UdV91SUF";
 
                         $dbh = new PDO('mysql:host=localhost;dbname=koncerti-db', $user, $pass);
                         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -58,8 +50,7 @@ $Cid=$_POST['ID'];
             ?>
 
         </td>
-
+</tr>
 </table>
-</body>
-</html>
+<?include ('footer.php');?>
 

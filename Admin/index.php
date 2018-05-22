@@ -1,37 +1,13 @@
 <?php session_start ();
 if (!empty ($_SESSION['admin'])){
     if ($_SESSION['admin']){
+        include ('header.php');
         ?>
-        <!DOCTYPE html>
-        <html lang="ru">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
             <title>Вход в административную панель</title>
-            <link href="styles.css" type="text/css" rel="stylesheet">
-            <style type= text/css>
-                #wrap{
-                    width: 100%;
-                    height: 100%;
-                }
-                .loginbox1{
-                    width: 300px;
-                    padding: 4px;
-                    border: 1px solid #777;
-                    background-color: #777;
-                    color: white;
-                    font-weight: bold;
-                }
-                .loginbox2{
-                    width: 300px;
-                    padding: 4px;
-                    border: 1px solid #777;
-                    color: #777;
-                }
-            </style>
-        </head>
-        <body>
+
+
         <center>
             <table cellpadding=0 cellspacing= «0» id= «wrap»>
                 <tr>
@@ -49,109 +25,27 @@ if (!empty ($_SESSION['admin'])){
                 </tr>
             </table>
         </center>
-        </body>
-        </html>
-        <?php exit;}
+
+        <?php
+        include ('footer.php');
+        exit;}
 }
 $_SESSION['admin'] = false;
 include ('config.php');
+include ('header.php');
 function not_logged_in ()
-{echo '<html>
-<head>
-<title>Административная панель</title>
- <link href="style.css" type="text/css" rel="stylesheet">
-<style type=text/css>
-#wrap{
-width: 100%;
-height: 100%;
-}
-#wraptd{
-padding: 20px;
-}
-.loginbox1{
-width: 300px;
-padding: 4px;
-border: 1px solid #777;
-background-color: #777;
-color: white;
-font-weight: bold;
-}
-.loginbox2{
-width: 300px;
-padding: 4px;
-border: 1px solid #777;
-color: #777;
-}
-.loginbox2 input{
-width: 200px;
-margin: 3px 0;
-border-color: #888;
-color: #777;
-}
-</style>
-</head>
-<body>
-<center>
-<table cellpadding=0 cellspacing=0 id=wrap>
-<tr>
-<td align=center id=wraptd><table cellpadding=0 cellspacing=0>
-<tr>
-<td class=loginbox1 align=center>Вход в административную панель</td>
-</tr>
-<tr>
-<td class=loginbox2 align=center>
-<form action=index.php method=post>
-<label>введите логин</label>
-<input type=text name=login>
-<br><label>введите пароль</label>
-<input type=password name=password>
-<br>
-<input type=submit value=Войти>
-</form>
-</td></tr>
-</table>
-</td>
-</tr>
-</table>
-</center>
-</body>
-</html>';
+{echo include ('indadm.php');
     exit;}
 if (!$_POST) not_logged_in ();
 if (!$_POST['login']) not_logged_in ();
 if (!$_POST['password']) not_logged_in ();
-if ($_POST['login']!= $adminlogin) not_logged_in ();
-if ($_POST['password']!= $adminpassw) not_logged_in ();
+if ($_POST['login'] != $adminlogin) not_logged_in ();
+if ($_POST['password'] != $adminpassw) not_logged_in ();
 $_SESSION['admin'] = true;
-?>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+include ('header.php')?>
+    
     <title>Административная панель</title>
-    <link href="styles.css" type="text/css" rel="stylesheet">
-    <style type=text/css>
-        #wrap{width: 100%;
-            height: 100%;
-        }
-        .loginbox1{
-            width: 300px;
-            padding: 4px;
-            border: 1px solid #777;
-            background-color: #777;
-            color: white;f
-        ont-weight: bold;
-        }
-        .loginbox2{
-            width: 300px;
-            padding: 4px;
-            border: 1px solid #777;
-            color: #777;
-        }
-    </style>
-</head>
+   
 <body>
 <center>
     <table cellpadding=0 cellspacing=0 id=wrap>
@@ -164,5 +58,12 @@ $_SESSION['admin'] = true;
                     <tr>
                         <td class=loginbox2 align=center>
                             <a href=admin_main.php>Перейти к административной панели</a>
-                        </td></tr></table></td></tr></table></center></body></html>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            </tr>
+    </table>
+</center>
 
+<?include ('footer.php');?>

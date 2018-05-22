@@ -1,38 +1,21 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Оплата билета на концерт</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="scripts.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-
+<?include ('header.php');
+include('bdConection.php');
+?>    <title>Оплата билета на концерт</title>
 
 <?php
 
 $places = $_GET['places'];
 $kid = $_GET['kid'];
 
-$arPlaces = explode(';', $places);
+$arPlaces = explode(';', $places);?>
 
-
-include('bdConection.php');
-
-$zapisi = $dbh->query('SELECT * from zap WHERE id=' . $_GET['kid']);
-
-$name = $zapisi->fetch();
-?>
 <body>
 <table align="center">
     <tr>
         <td colspan="2" height="50px" valign="top">
             <!--ЛОГО-->
             <div class="header">
-                <div class="text" style="padding:3px;">На этой странице вы можете оплатить билет на концерт "<?= $name['title'] ?>"</p>
+                <div class="text" style="padding:3px;">На этой странице вы можете оплатить билет на концерт.</p>
                 </div>
         </td>
     </tr>
@@ -44,15 +27,8 @@ $name = $zapisi->fetch();
     $kid = $_GET['kid'];
     $price = $_GET['price'];
     $arPlaces = explode(';', $places);
-
-
-    include('bdConection.php');
-
     $zapisi = $dbh->query('SELECT * from zap WHERE id=' . $_GET['kid']);
-
-    $name = $zapisi->fetch();
-
-
+            $name = $zapisi->fetch(PDO::FETCH_BOTH);
     echo ' <div class="koncerts">', "Название концерта: ", $name['title'], '<br>';
     foreach ($arPlaces as $place) {
         $place = explode(',', $place);
@@ -80,5 +56,4 @@ $name = $zapisi->fetch();
     </table>
 
 </center>
-</body>
-</html>
+<?include ('footer.php')?>

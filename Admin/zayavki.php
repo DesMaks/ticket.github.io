@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+<?php
+include ('adm.php');
+include('header.php');
+include ('bdConection.php');
+?>
     <title>Pay ticket</title>
-    <link rel="stylesheet" href="styles.css" type="text/css"/></head>
 <body >
 
 <div class="text">Текущие заявки</div>
@@ -17,18 +15,13 @@
         <td>
 
 <?php
-include ('bdConection.php');
 
 $zapis = $dbh->query('SELECT * from zayavk ORDER BY id');
 
-
-
-
 ?>
 <?php foreach($zapis as $row):
-    $oplt=$row['payed'];
-    $active=$row['active']?>
-
+    $oplt = $row['payed'];
+    $active = $row['active']?>
 
     <div class="zayavki" style="border: 1px solid #ffde71">
 
@@ -46,5 +39,5 @@ $zapis = $dbh->query('SELECT * from zayavk ORDER BY id');
     </tr>
 
 </table>
-</body>
-</html>
+<?php
+include ('header.php');?>
