@@ -103,7 +103,8 @@ if(($_FILES['userfile']['type'] == 'image/gif' || $_FILES['userfile']['type'] ==
             } else {
                 echo "Заполните пустые поля";
             }
-            
+            if($_POST['title'])
+                header('Location:admin_main.php');
 
 
 ?>

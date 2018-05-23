@@ -7,12 +7,17 @@ include('bdConection.php');?>
 
 if(!$_GET['kid'])
     header('Location: /');
-$zapisi = $dbh->query('SELECT * FROM `zap`');
 
-$all=$zapisi->fetch();
+
+$zapisi = $dbh->query('SELECT * FROM `zap` WHERE `id`=' . $_GET['kid']);
+
+$all = $zapisi ->fetch();
+
+        if($_GET['kid'] != $all['id'])
+            header('Location:error.php');
+
 
 $zayavki = $dbh->query('SELECT * FROM `zayavk` WHERE `koncert_id`=' . $_GET['kid']);
-
 
 $arrayBoughtPlaces = [];
 

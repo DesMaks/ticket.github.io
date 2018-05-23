@@ -3,8 +3,8 @@
 include ('adm.php');
 include ('bdConection.php');
 include ('header.php');
+$zapis = $dbh->query(" SELECT *, DATE_FORMAT(`date_concert`,'%Y-%m-%d  %H:%i') AS `date_concert` FROM `zap` WHERE id = " . $_GET["id"]);
 
-$zapis = $dbh->query('SELECT * from zap WHERE id = ' . $_GET["id"]);
 
 if(!$_GET['id'])
     header('Location: /');
@@ -51,7 +51,7 @@ endforeach;?>
                 <p><label>Загрузить изображение <br>
                         <input type="file" name="userfile"">
                 </p>
-                <p>Выберите дату и время*:<input type="datetime-local" name="calendar"  value="<?=$row['date_concert']?>"></p>
+                <p>измените дату и время*:<input type="datetime" name="calendar" value="<?=$row['date_concert']?>"></p>
                 <p><label>Ввеcти полное описание концерта*  (не менее 2 символов)<br>
 
 <textarea name="text" ><?=$row['text']?></textarea>

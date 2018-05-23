@@ -51,10 +51,10 @@ a:active {color: #86b7ff; text-decoration:none;}
     text-align: center;
     margin:0px;
     box-sizing: content-box;
-    width: 70%;
-    height:25%px;
-    border:2px solid #c0ecff;
 
+    border:2px solid #c0ecff;
+    width: 1000px;
+    height: 40%;
     padding: 20px;
     overflow: hidden;
 
@@ -82,6 +82,14 @@ a:active {color: #86b7ff; text-decoration:none;}
     text-align: center;
 }
 
+.date_concerts{
+
+    font: normal 20px/1 Verdana, Geneva, sans-serif;
+    color: rgb(237, 99, 113);
+    text-overflow: ellipsis;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2) ;
+    text-align: center;
+}
 A {
     text-decoration: none;
     color: rgb(168, 185, 237);

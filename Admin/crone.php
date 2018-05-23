@@ -1,4 +1,5 @@
             <?php
+            if (php_sapi_name() !== 'cli') die('Запуск запрещен');
             include ('bdConection.php');
 
 

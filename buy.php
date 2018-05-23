@@ -1,6 +1,6 @@
-<?include ('header.php');
-include('bdConection.php');
-?>    <title>Оплата билета на концерт</title>
+<? include ('header.php');
+include('bdConection.php'); ?>
+    <title>Оплата билета на концерт</title>
 
 <?php
 
@@ -43,7 +43,6 @@ $arPlaces = explode(';', $places);?>
             <input name="email" type="email" value=" Ваш Email" onblur="if(this.value=='') this.value='Ваш Email';" onfocus="if(this.value=='Ваш Email') this.value='';">
             <input type="hidden" name ="places" value="<?=$places?>">
             <input type="hidden" name ="koncert_id" value="<?=$kid?>"><br>
-            <input type="hidden" name ="name_concert" value="<?=$name['title']?>"><br>
             <span class="span">Итого к оплате: <?echo $price?> ₽</span><br>
          
         <input type="radio" name="oplata" value="1">Оплатить<br>

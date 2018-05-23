@@ -15,15 +15,16 @@ include('bdConection.php');?>
         <td valign="top" align="center"><br>
 
             <?php
-            $zapis = $dbh->query("SELECT * from zap ORDER BY date_concert");
 
-             foreach ($zapis as $rows): ?>
-
+            $zapis = $dbh->query(" SELECT *, DATE_FORMAT(`date_concert`,'%d-%m-%Y в %H:%i') AS `date_concert` FROM `zap` WHERE DATE(date_concert) >= CURDATE()");
+        foreach ($zapis as $rows):
+              ?>
                 <div class="koncerts">
                     <img src='http://<?= $rows['photo'] ?>' heigth=500 width=500>
 
-                    <div class="text1"> Название концерта: "<?= $rows['title'] ?>"</div>
-                 <div class="text1"> Дата проведения концерта: <?= $rows['date_concert'] ?> </div><br>
+                    <div class="text1"> Название концерта: "<?= $rows['title'] ?>"</div><br>
+                 <div class="text1"> Дата и время проведения концерта: <br><br></div>
+                    <div class="date_concerts"> <?= $rows['date_concert'] ?>  </div><br>
                     <div class="text">Описание концерта: <?= $rows['text'] ?> </div>
 
                     <?php
@@ -77,7 +78,7 @@ include('bdConection.php');?>
                             $priceTo = $rows['price_zone1'];
                         }
 
-                        echo "<div class='text1'> Цены билетов:<br> <br>от " . $priceTo.'₽ '. 'до '.$priceFrom.'₽ '?><br></div><form action="pay.php" method="get">
+                        echo "<div class='text1'> Цены билетов:<br> <br>от " . $priceFrom.'₽ '. 'до '.$priceTo.'₽ '?><br></div><form action="pay.php" method="get">
                     <input type="hidden" name="kid" value="<?= $rows['id'] ?>">
 
                     <input type="submit" value="Купить"/>
