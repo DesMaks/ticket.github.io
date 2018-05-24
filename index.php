@@ -17,7 +17,12 @@ include('bdConection.php');?>
             <?php
 
             $zapis = $dbh->query(" SELECT *, DATE_FORMAT(`date_concert`,'%d-%m-%Y в %H:%i') AS `date_concert` FROM `zap` WHERE DATE(date_concert) >= CURDATE()");
+
+
         foreach ($zapis as $rows):
+
+
+
               ?>
                 <div class="koncerts">
                     <img src='http://<?= $rows['photo'] ?>' heigth=500 width=500>
@@ -33,6 +38,7 @@ include('bdConection.php');?>
                     foreach ($zayavki as $mest) {
                         $buyedPlaces = array_merge($buyedPlaces, explode(';', $mest['places']));
                     }
+
                     $zone1_occupied_places = 0;
                     $zone2_occupied_places = 0;
                     $zone3_occupied_places = 0;
@@ -88,6 +94,7 @@ include('bdConection.php');?>
                     }
                     ?>
                 </div>
+</div>
 
             <?php endforeach; ?>
         </td>

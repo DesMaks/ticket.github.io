@@ -31,7 +31,7 @@ $Cid = $_POST['ID'];
             print "Error!: " . $e->getMessage() . "<br/>";
             die();
         }
-        {echo  "<p>Концерт успешно удален!<a href=\"admin_main.php\">Назад</a></p>";}
+        {echo  "<p>Концерт успешно удален!<br><a href=\"admin_main.php\">Назад</a></p>";}
 
 
 
