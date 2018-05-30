@@ -1,10 +1,11 @@
 <?php
 include ('adm.php');
 include ('bdConection.php');
+$titles = 'Удаление существующей заявки';
 include ('header.php');
 $Cid = $_POST['ID'];
 ?>
-<title>Удаление существующей заявки</title>
+
 <body >
 <div class="text">Удаление существующей заявки</div>
 <table border="1" bordercolor="#000000" width="910" align="center" bgcolor="#a8b9ed" cellspacing="0" cellpadding="10">

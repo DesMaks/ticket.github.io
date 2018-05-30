@@ -1,10 +1,7 @@
-<? include ('header.php');
-include('bdConection.php'); ?>
-    <title>Оплата билета на концерт</title>
-
-<?php
-
-$places = $_GET['places'];
+<? include('bdConection.php');
+$titles = 'Оплата билета на концерт';
+include ('header.php');
+ $places = $_GET['places'];
 $kid = $_GET['kid'];
 
 $arPlaces = explode(';', $places);?>

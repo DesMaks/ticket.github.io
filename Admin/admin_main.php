@@ -1,12 +1,10 @@
 <?php
 include ('adm.php');
 include ('bdConection.php');
+$titles = 'Текущие концерты';
 include ('header.php');
 
 ?>
-
-    <title>Текущие концерты</title>
-
 <body>
 
 
@@ -27,9 +25,9 @@ include ('header.php');
             <? foreach($Koncerid as $row): ?>
 
 
-                <div class="users" style="border: 1px solid #ffde71">
+                <div class="users">
                    
-                    <img src='http://<?=$row['photo']?>' heigth=500 width=500 >
+                    <img src='http://<?=$row['photo']?>' height=500 width=500 >
                     <div class="text"> Дата проведения концерта: <?= $row['date_concert']?> </div>
                     <div class="text"> Название концерта: <?= $row['title']?> </div>
                     <div class="text">Описание концерта: <?=$row['text']?> </div>

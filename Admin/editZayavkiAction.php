@@ -1,13 +1,13 @@
 <?php
 include ('adm.php');
 include "bdConection.php";
+$titles = 'Редактирование заявок';
 include "header.php";
 $oplata = $_POST['payed'];
 $active = $_POST['active'];
 $Cid = $_POST['ID'];
 ?>
 
-    <title>Редактирование заявок</title>
     
 <body >
 
@@ -24,9 +24,7 @@ $Cid = $_POST['ID'];
            
                     try
                     {
-
-
-                        $dbh = new PDO('mysql:host=localhost;dbname=koncerti-db', $user, $pass);
+                        
                         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 

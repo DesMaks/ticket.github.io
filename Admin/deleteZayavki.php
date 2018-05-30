@@ -2,16 +2,15 @@
 <?php
 include ('adm.php');
 include ('bdConection.php');
+$titles = 'Удаление существующей заявки';
 include ('header.php');
 
 $zapis = $dbh->query('SELECT * from zayavk ');
 if(!$_GET['id'])
     header('Location: /');
 ?>
-<?php foreach($zapis as $row): ?>
 
-<?php endforeach;?>
-<title>Удаление существующей заявки</title>
+
 
 <body>
 

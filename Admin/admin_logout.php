@@ -1,9 +1,9 @@
 <?php
 include ('admout.php');
+$titles = 'Административная панель';
 include ('header.php')
 ?>
 
-    <title>Административная панель</title>
 
 <body>
 <center>

@@ -1,12 +1,12 @@
 <?php
 include ('adm.php');
+$titles = 'Текущие заявки';
 include('header.php');
 include ('bdConection.php');
 ?>
-    <title>Pay ticket</title>
+   
 <body >
 
-<div class="text">Текущие заявки</div>
 
 <a href=admin_logout.php>Выйти из административной панели</a>
 <table border="1" bordercolor="#000000" width="910" align="center" bgcolor="#a8b9ed" cellspacing="0" cellpadding="10">

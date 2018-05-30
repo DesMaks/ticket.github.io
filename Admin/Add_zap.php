@@ -1,6 +1,7 @@
 
 <?php
 include ('adm.php');
+include ('clean_check.php');
 include ('header.php');
 include ('bdConection.php');
 
@@ -10,26 +11,7 @@ $price1 = $_POST['price1'];
 $price2 = $_POST['price2'];
 $price3 = $_POST['price3'];
 $date_concert = $_POST['calendar'];
-function clean($value = "") {
-    $value = trim($value);
-    $value = stripslashes($value);
-    $value = strip_tags($value);
-    $value = htmlspecialchars($value);
 
-    return $value;
-}
-
-function check_length($value = "", $min, $max) {
-    $result = (mb_strlen($value) < $min || mb_strlen($value) > $max);
-    return !$result;
-}
-
-
-$title = clean($title);
-$text = clean($text);
-$price1 = clean($price1);
-$price2 = clean($price2);
-$price3 = clean($price3);
 
 $uploaddir = 'photo/';
 
@@ -61,7 +43,6 @@ if(($_FILES['userfile']['type'] == 'image/gif' || $_FILES['userfile']['type'] ==
 
 ?>
 
-    <title>Добавление нового концерта</title>
     <body>
 <a href=admin_logout.php>Выйти из административной панели</a>
 <table border="1" bordercolor="#000000" width="910" align="center" bgcolor="#a8b9ed" cellspacing="0" cellpadding="10">
@@ -104,7 +85,7 @@ if(($_FILES['userfile']['type'] == 'image/gif' || $_FILES['userfile']['type'] ==
                 echo "Заполните пустые поля";
             }
             if($_POST['title'])
-                header('Location:admin_main.php');
+                echo "<script>window.location.href='admin_main.php'</script>";
 
 
 ?>

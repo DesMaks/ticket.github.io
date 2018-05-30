@@ -1,21 +1,17 @@
-<?include ('header.php');
-include('bdConection.php');?>
-<title>Концертный зал</title>
-
-<?php
-
+<?
 
 if(!$_GET['kid'])
     header('Location: /');
-
+$titles = 'Концертный зал';
+include ('header.php');
+include('bdConection.php');
 
 $zapisi = $dbh->query('SELECT * FROM `zap` WHERE `id`=' . $_GET['kid']);
 
 $all = $zapisi ->fetch();
 
-        if($_GET['kid'] != $all['id'])
-            header('Location:error.php');
-
+if($_GET['kid'] != $all['id'])
+    echo "<script>window.location.href='error.php'</script>";
 
 $zayavki = $dbh->query('SELECT * FROM `zayavk` WHERE `koncert_id`=' . $_GET['kid']);
 
@@ -34,7 +30,7 @@ while ($zayavka = $zayavki->fetch()) {
 <table align="center">
     <tr>
         <td colspan="2" height="50px" valign="top">
-            <!--ЛОГО-->
+
             <div class="header">
                 <div class="text" style="padding:3px;">Выбор места на концерт.
 

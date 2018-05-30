@@ -2,19 +2,19 @@
 <?php
 include ('adm.php');
 include ('bdConection.php');
+$titles = 'Изменение существующего концерта';
 include ('header.php');
-$zapis = $dbh->query(" SELECT *, DATE_FORMAT(`date_concert`,'%Y-%m-%d  %H:%i') AS `date_concert` FROM `zap` WHERE id = " . $_GET["id"]);
+$ID = $_GET['id'];
+$zapis = $dbh->prepare(" SELECT *, DATE_FORMAT(date_concert,'%Y-%m-%d  %H:%i') AS date_concert FROM zap WHERE id = :ID");
 
-
+$zapis->execute(array(
+    ':ID' => $ID));
 if(!$_GET['id'])
-    header('Location: /');
 
-foreach($zapis as $row):
+        echo "<script>window.location.href='/'</script>";
+$row = $zapis ->fetch();
+?>
 
-endforeach;?>
-
-
-<title>Изменение существующего концерта</title>
 
 <body>
 <a href=admin_logout.php>Выйти из административной панели</a>

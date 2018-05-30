@@ -1,6 +1,8 @@
-<?include ('header.php');
+<?include('bdConection.php');
+$titles = 'Спасибо за покупку!';
+include ('header.php');
 
-include('bdConection.php');
+
 
 
             $places = $_POST['places'];
@@ -17,28 +19,19 @@ include('bdConection.php');
                 $sth->bindParam(':koncert_id', $koncert_id);
                 $sth->bindParam(':date_adds', $date_adds);
                 $sth->execute();
-
-
-
-               
+                
 ?>
 
-
-
-<title>Спасибо за покупку!</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
 <body>
 <table align="center">
 
     <tr>
         <td valign="top" align="center"><br>
-                succes.php
+
                 <?
                 if($_POST['koncert_id'])
-                    header('Location:succes.php');
+                    echo "<script>window.location.href='succes.php'</script>";
+                
             } catch (PDOException $e) {
                 print "Error!: " . $e->getMessage() . "<br/>";
                 die();

@@ -1,11 +1,12 @@
-<?include ('header.php');
-include('bdConection.php');?>
-<title>Главная</title>
+<?include('bdConection.php');
+$titles = 'Главная';
+include ('header.php');
+?>
 <body>
 <table align="center">
     <tr>
         <td colspan="2" height="50px" valign="top">
-            <!--ЛОГО-->
+
             <div class = "header">
                 <div class = "text1" style="padding:3px;">Все концерты </div>
            
@@ -25,7 +26,7 @@ include('bdConection.php');?>
 
               ?>
                 <div class="koncerts">
-                    <img src='http://<?= $rows['photo'] ?>' heigth=500 width=500>
+                    <img src='http://<?= $rows['photo'] ?>' height=500 width=500>
 
                     <div class="text1"> Название концерта: "<?= $rows['title'] ?>"</div><br>
                  <div class="text1"> Дата и время проведения концерта: <br><br></div>

@@ -2,17 +2,15 @@
 <?php
 include ('adm.php');
 include ('bdConection.php');
+$titles = 'Изменение существующей заявки';
 include ('header.php');
 $zayavki = $dbh->query('SELECT * from zayavk WHERE id = ' . $_GET["id"]);
-
+$all = $zayavki -> fetch();
 if(!$_GET['id'])
-    header('Location: /');
-foreach($zayavki as $row): 
+    echo "<script>window.location.href='/'</script>";?>
 
-endforeach;?>
 
-<title>Изменение существующей заявки</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+
     
 <body>
 <a href=admin_logout.php>Выйти из административной панели</a>
@@ -20,8 +18,8 @@ endforeach;?>
 
     <tr>
         <?php include "left.php";
-        $oplt = $row['payed'];
-        $active = $row['active']?>
+        $oplt = $all['payed'];
+        $active = $all['active']?>
         <td>
 
             <form name="editZayavkiForm" method="post" action="editZayavkiAction.php">

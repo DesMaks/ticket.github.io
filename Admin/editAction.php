@@ -1,7 +1,9 @@
 <?php
 include ('adm.php');
 include ('bdConection.php');
+$titles = 'Редактирование концерта';
 include ('header.php');
+include ('clean_check.php');
 $title = $_POST['title'];
 $text = $_POST['text'];
 $Cid = $_POST['ID'];
@@ -10,28 +12,6 @@ $price2 = $_POST['price2'];
 $price3 = $_POST['price3'];
 $date_concert = $_POST['calendar'];
 
-function clean($value = "") {
-    $value = trim($value);
-    $value = stripslashes($value);
-    $value = strip_tags($value);
-    $value = htmlspecialchars($value);
-
-    return $value;
-}
-
-function check_length($value = "", $min, $max) {
-    $result = (mb_strlen($value) < $min || mb_strlen($value) > $max);
-    return !$result;
-}
-
-
-$title = clean($title);
-$text = clean($text);
-$price1 = clean($price1);
-$price2 = clean($price2);
-$price3 = clean($price3);
-?>
-<?PHP
 
 $uploaddir = 'photo/';
 
@@ -62,7 +42,7 @@ if(($_FILES['userfile']['type'] == 'image/gif' || $_FILES['userfile']['type'] ==
 }
 
 ?>
-<title>Редактирование концерта</title>
+
 
 <body >
 <div class="text">Изменение существующего концерта</div>
@@ -80,12 +60,7 @@ if(!empty($title) && !empty($text)&& !empty($price1)&& !empty($price2)&& !empty(
     if(check_length($title, 2, 25) && check_length($text, 2, 3000)) {
         try
         {
-
-
-            $dbh = new PDO('mysql:host=localhost;dbname=koncerti-db', $user, $pass);
             $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $dbh->exec("set names utf8");
-
     $Concertid = $dbh->prepare('UPDATE zap SET title = :title,text = :text,photo = :photo, price_zone1 = :price_zone1,
 price_zone2 = :price_zone2,price_zone3 = :price_zone3,date_concert =:date_concert  WHERE id=:ID');
 
@@ -113,9 +88,7 @@ price_zone2 = :price_zone2,price_zone3 = :price_zone3,date_concert =:date_concer
     echo "Заполните пустые поля!";
 }
 
-
 ?>
-
         </td>
 </tr>
 </table>

@@ -1,8 +1,10 @@
 <?php
 include ('adm.php');
+$titles = 'Добавление нового концерта';
 include ('header.php');
+
 ?>
-<title>Добавление нового концерта</title>
+
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
 <body>
 <a href=admin_logout.php>Выйти из административной панели</a>

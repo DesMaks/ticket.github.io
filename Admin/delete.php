@@ -2,14 +2,14 @@
 <?php
 include ('adm.php');
 include ('bdConection.php');
+$titles = 'Удаление существующего концерта';
 include ('header.php');
 $zapis = $dbh->query('SELECT * from zap ');
-if(!$_GET['id'])
-    header('Location: /');
-foreach($zapis as $row):
 
- endforeach;?>
-<title>Удаление существующего концерта</title>
+if(!$_GET['id'])
+    echo "<script>window.location.href='admin_main.php'</script>";
+?>
+
 
 <body>
 

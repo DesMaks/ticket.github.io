@@ -1,10 +1,11 @@
 <?php
 include ('adm.php');
 include ('bdConection.php');
+$titles = 'Удаление существующего концерта';
 include ('header.php');
 $Cid = $_POST['ID'];
 ?>
-    <title>Удаление существующего концерта</title>
+
 <body >
 
 <table border="1" bordercolor="#000000" width="910" align="center" bgcolor="#a8b9ed" cellspacing="0" cellpadding="10">
@@ -17,7 +18,7 @@ $Cid = $_POST['ID'];
 
         try
         {
-            $dbh = new PDO('mysql:host=localhost;dbname=koncerti-db', $user, $pass);
+           
             $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $Concertid = $dbh->prepare('DELETE FROM zap WHERE id = :ID');
 
